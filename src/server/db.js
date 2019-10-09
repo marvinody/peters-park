@@ -10,6 +10,11 @@ const db = new Sequelize(
 const Cat = db.define('cat', {
   name: {
     type: Sequelize.STRING,
+    allowNull: false,
+  },
+  imageUrl: {
+    type: Sequelize.STRING,
+    defaultValue: '/images/default-cat.png'
   }
 })
 
