@@ -1,0 +1,43 @@
+{
+  "name": "peters-park",
+  "version": "1.0.0",
+  "scripts": {
+    "client-watch": "webpack --watch",
+    "server-watch": "nodemon src/server -e html,js,scss --ignore static --ignore src/client",
+    "dev": "npm run client-watch & npm run server-watch",
+    "test": "mocha ./tests/**/*.spec.js --watch --require babel-core/register"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
+    "@babel/plugin-proposal-function-sent": "^7.5.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "chai": "^3.5.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.19.3",
+    "sinon": "^1.17.6",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "volleyball": "^1.5.1"
+  }
+}
