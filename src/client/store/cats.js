@@ -8,7 +8,7 @@ import axios from 'axios'
 // INITIAL STATE
 // what would be a good initial state?
 // :thinking:
-const initialState = undefined
+const initialState = null
 
 // ACTION CREATORS
 export const loadCats = data => ({

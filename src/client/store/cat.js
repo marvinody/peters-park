@@ -4,7 +4,7 @@
 
 
 // INITIAL STATE
-const initialState = undefined
+const initialState = null
 
 // ACTION CREATORS
 export const fetchCat = id => {
