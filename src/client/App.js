@@ -4,7 +4,10 @@
  *
 */
 import React from 'react';
+import Routes from './Routes'
 
 export default () => (
-  <h1>Hello world!</h1>
+  <div>
+    <Routes></Routes>
+  </div>
 )
