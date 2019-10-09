@@ -5,7 +5,7 @@
     "client-watch": "webpack --watch",
     "server-watch": "nodemon src/server -e html,js,scss --ignore static --ignore src/client",
     "dev": "npm run client-watch & npm run server-watch",
-    "test": "mocha ./tests/**/*.spec.js --watch --require babel-core/register",
+    "test": "mocha ./tests/**/*.spec.js --watch --require @babel/register",
     "postinstall": "bash scripts/makedb.sh"
   },
   "devDependencies": {
@@ -25,9 +25,9 @@
     "@babel/register": "^7.6.2",
     "babel-loader": "^8.0.6",
     "chai": "^3.5.0",
-    "enzyme": "^3.2.0",
-    "enzyme-adapter-react-16": "^1.1.0",
-    "mocha": "^6.0.2",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "mocha": "^6.2.1",
     "nodemon": "^1.19.3",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
