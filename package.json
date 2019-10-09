@@ -5,7 +5,7 @@
     "client-watch": "webpack --watch",
     "server-watch": "nodemon src/server -e html,js,scss --ignore static --ignore src/client",
     "dev": "npm run client-watch & npm run server-watch",
-    "test": "mocha ./tests/**/*.spec.js --watch --require @babel/register",
+    "test": "mocha ./tests/**/*.spec.js --watch --require @babel/polyfill --require @babel/register",
     "postinstall": "bash scripts/makedb.sh"
   },
   "devDependencies": {
