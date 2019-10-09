@@ -8,9 +8,8 @@ module.exports = {
     './src/client/'
   ],
   output: {
-    path: __dirname,
-    // publicPath: '/',
-    filename: 'static/bundle.js'
+    path: path.join(__dirname, 'static'),
+    filename: 'bundle.js'
   },
   resolve: {
     extensions: ['.js', '.jsx']
