@@ -42,6 +42,9 @@
     "pg-hstore": "^2.3.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
     "sequelize": "^5.19.4",
     "volleyball": "^1.5.1"
   }
