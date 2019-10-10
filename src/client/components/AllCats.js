@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import CatCard from './CatCard'
 
 // why are we exporting so much stuff you might ask?
 // and I would say good question
@@ -13,7 +14,8 @@ export const DisconnectedAllCats = props => {
   return (
     <span>
       YOUR STUFF HERE
-  </span>
+      YOU SHOULD USE CATCARD AND PASS STUFF DOWN MAYBE
+    </span >
   )
 }
 
