@@ -39,14 +39,14 @@ describe('Redux - Cat', () => {
   describe('Action Creators', () => {
     describe('loadCat', () => {
       it('should have a type of "LOAD_CAT"', () => {
-        const loadCatsAction = loadCat({}) // just want to see the action returned
-        expect(loadCatsAction.type).to.be.equal('LOAD_CAT')
+        const loadCatAction = loadCat({}) // just want to see the action returned
+        expect(loadCatAction.type).to.be.equal('LOAD_CAT')
       })
 
       it('should set the .cat property to the passed in data', () => {
         // we're just giving it an array of strings because we don't care too much about what the
-        const loadCatsAction = loadCat(fakeCat)
-        expect(loadCatsAction.cat).to.deep.equal(fakeCat)
+        const loadCatAction = loadCat(fakeCat)
+        expect(loadCatAction.cat).to.deep.equal(fakeCat)
 
       })
 
