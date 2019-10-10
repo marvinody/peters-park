@@ -7,6 +7,7 @@ import { spy } from 'sinon'
 // You should be able to reason what parts of the state each component needs
 // but you can use this to guide you
 import { mapStateToProps as AllCatsMapState, mapDispatchToProps as AllCatsMapDispatch } from '../../src/client/components/AllCats'
+import { mapStateToProps as SingleCatMapState, mapDispatchToProps as SingleCatMapDispatch } from '../../src/client/components/SingleCat'
 
 describe('React-Redux MapBlanks', () => {
   describe('AllCats', () => {
@@ -30,13 +31,57 @@ describe('React-Redux MapBlanks', () => {
         expect(mappedDispatch.fetchCats).to.be.a('function')
       })
 
-      it('should have a fetchCats property', () => {
+      it('should call the passed-in dispatch function when invoked', () => {
         const fakeDispatch = spy()
 
         const mappedDispatch = AllCatsMapDispatch(fakeDispatch)
         mappedDispatch.fetchCats() // call the thing so we "load" the cats
         expect(fakeDispatch.calledOnce).to.equal(true)
 
+      })
+    })
+  })
+
+  describe('SingleCats', () => {
+    describe('mapState', () => {
+      it('should SPREAD the state\'s .cat', () => {
+        const fakeState = {
+          cat: {
+            id: 9001,
+            name: 'thundercat',
+            stuff: {
+              that: {
+                you: ['better', {
+                  be: 'spreading'
+                }]
+              }
+            },
+            or: "you're",
+            gonna: 'have a',
+            bad: 'time'
+          }
+        }
+
+        const mappedState = SingleCatMapState(fakeState)
+        expect(mappedState.cat).to.equal.deep(fakeState.cat)
+
+      })
+    })
+    describe('mapDispatch', () => {
+      it('should have a fetchCat property & should be a function', () => {
+        const fakeDispatch = spy();
+
+        const mappedDispatch = SingleCatMapDispatch(fakeDispatch)
+        expect(mappedDispatch.fetchCat).to.not.be.an('undefined')
+        expect(mappedDispatch.fetchCat).to.be.a('function')
+      })
+
+      it('should call the passed-in dispatch function when invoked', () => {
+        const fakeDispatch = spy()
+
+        const mappedDispatch = SingleCatMapDispatch(fakeDispatch)
+        mappedDispatch.fetchCat()
+        expect(fakeDispatch.calledOnce).to.equal(true)
       })
     })
   })
