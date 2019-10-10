@@ -25,7 +25,7 @@ const fakeCat = {
 }
 
 
-describe('Redux - Cat', () => {
+xdescribe('Redux - Cat', () => {
 
   describe('Initial state', () => {
     it('should have an empty object as the initial state', () => {
