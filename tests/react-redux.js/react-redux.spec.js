@@ -10,7 +10,7 @@ import { mapStateToProps as AllCatsMapState, mapDispatchToProps as AllCatsMapDis
 import { mapStateToProps as SingleCatMapState, mapDispatchToProps as SingleCatMapDispatch } from '../../src/client/components/SingleCat'
 
 describe('React-Redux MapBlanks', () => {
-  describe('AllCats', () => {
+  xdescribe('AllCats', () => {
     describe('mapState', () => {
       it('should take cats from state', () => {
         const fakeState = {
@@ -42,7 +42,7 @@ describe('React-Redux MapBlanks', () => {
     })
   })
 
-  describe('SingleCats', () => {
+  xdescribe('SingleCats', () => {
     describe('mapState', () => {
       it('should SPREAD the state\'s .cat', () => {
         const fakeState = {
