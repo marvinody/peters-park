@@ -12,7 +12,7 @@ import CatCard from '../../src/client/components/CatCard'
 const adapter = new Adapter()
 enzyme.configure({ adapter })
 
-describe('React - AllCats', () => {
+xdescribe('React - AllCats', () => {
   let catsWrapper
 
   const cats = [
