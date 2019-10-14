@@ -10,14 +10,12 @@ import CatCard from './CatCard'
 // this is not the correct import you want generally
 // you want the default export
 // don't worry about it too much
-export class DisconnectedAllCats extends React.Component {
-
+export class DisconnectedSingleCat extends React.Component {
   render() {
     return (
-      <div>
-        YOUR STUFF HERE
-        YOU SHOULD USE CATCARD AND PASS STUFF DOWN MAYBE
-      </div>
+      <div className='single-cat'>
+
+      </div >
     )
   }
 }
@@ -38,9 +36,9 @@ export const mapDispatchToProps = (dispatch) => {
 
 // don't touch this line
 // but this is the component you probably want in most cases
-// so if you're using DisconnectedAllCats somewhere else in your program
+// so if you're using DisconnectedSingleCat somewhere else in your program
 // you're gonna have a bad time
-export default connect(mapStateToProps, mapDispatchToProps)(DisconnectedAllCats)
+export default connect(mapStateToProps, mapDispatchToProps)(DisconnectedSingleCat)
 
 
 
