@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import CatCard from './CatCard'
 
 // why are we exporting so much stuff you might ask?
 // and I would say good question
@@ -9,12 +10,14 @@ import { connect } from 'react-redux'
 // this is not the correct import you want generally
 // you want the default export
 // don't worry about it too much
-export const DisconnectedSingleCat = props => {
-  return (
-    <div class='single-cat'>
+export class DisconnectedSingleCat extends React.Component {
+  render() {
+    return (
+      <div className='single-cat'>
 
-    </div >
-  )
+      </div >
+    )
+  }
 }
 
 // the mapBlankToProps don't have to be filled out with anything
