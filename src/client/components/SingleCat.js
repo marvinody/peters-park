@@ -20,8 +20,6 @@ export class DisconnectedSingleCat extends React.Component {
   }
 }
 
-// the mapBlankToProps don't have to be filled out with anything
-// but use them to your advantage
 export const mapStateToProps = (state) => {
   return {
 

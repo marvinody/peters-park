@@ -21,7 +21,9 @@ xdescribe('React - AllCats', () => {
   ]
 
   beforeEach(() => {
-    catsWrapper = shallow(<DisconnectedAllCats cats={cats} />)
+    catsWrapper = shallow(<DisconnectedAllCats cats={cats} />, {
+      disableLifecycleMethods: true,
+    })
   })
 
   it(`shows "Peter's Park" in an h1 somewhere`, () => {

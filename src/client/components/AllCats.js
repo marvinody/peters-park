@@ -14,16 +14,12 @@ export class DisconnectedAllCats extends React.Component {
 
   render() {
     return (
-      <div>
-        YOUR STUFF HERE
-        YOU SHOULD USE CATCARD AND PASS STUFF DOWN MAYBE
+      <div className='all-cats'>
       </div>
     )
   }
 }
 
-// the mapBlankToProps don't have to be filled out with anything
-// but use them to your advantage
 export const mapStateToProps = (state) => {
   return {
 

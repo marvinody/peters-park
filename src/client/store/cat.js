@@ -2,7 +2,6 @@ import axios from "axios";
 
 // ACTION TYPES
 // YOU MAKE THEM!!
-// check the test specs for to actually write tho
 
 
 // INITIAL STATE
