@@ -1,5 +1,6 @@
 const router = require('express').Router()
-const { Cat } = require('./db')
+const { Cat, Toy, ToyLikeness } = require('./db')
+const Op = require('sequelize').Op
 
 /*
  * YOU DONT EDIT THESE FILES
@@ -21,7 +22,27 @@ router.get('/cats', async (req, res, next) => {
 router.get('/cats/:catId', async (req, res, next) => {
   try {
     // ask the db for one cat (by its id)
-    const cat = await Cat.findById(req.params.catId)
+    const cat = await Cat.findByPk(req.params.catId, {
+      include: [
+        // I can just pass the string here since I don't have a model named friends
+        'friends',
+        // so this is a way to do a confusing includes
+        // essentially, I want all the toys with their toy rating
+        // but I also don't want lowly rated toys
+        {
+          model: Toy,
+          as: 'toyRatings',
+          // BUT, I only want the ones with rating >= 3
+          through: {
+            where: {
+              rating: {
+                [Op.gte]: 3
+              }
+            }
+          }
+        }
+      ]
+    })
     if (cat) { // if we found the cat
       res.json(cat) // let's send it to them
     } else { // if we didn't find the cat
@@ -31,6 +52,8 @@ router.get('/cats/:catId', async (req, res, next) => {
   } catch (err) { next(err) }
 })
 
+
+// the following routes aren't used but are left for documentation on routes
 router.post('/cats/', async (req, res, next) => {
   try {
     const data = req.body // grab the data sent to us

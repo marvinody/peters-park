@@ -2,6 +2,7 @@
   "name": "peters-park",
   "version": "1.0.0",
   "scripts": {
+    "seed": "node scripts/seed.js",
     "client-watch": "webpack --watch",
     "server-watch": "nodemon src/server -e html,js,scss --ignore static --ignore src/client",
     "dev": "npm run client-watch & npm run server-watch",

@@ -53,5 +53,5 @@ app.use((err, req, res, next) => {
 // Finally, let's actually listen to requests
 app.listen(3000, () => {
   console.log("Hello Seattle. I'm listening")
-  db.sync({ force: true })
+  db.sync({ force: false })
 })
