@@ -23,19 +23,19 @@ describe('React-Redux MapBlanks', () => {
       })
     })
     describe('mapDispatch', () => {
-      it('should have a fetchCats property & should be a function', () => {
+      it('should have a goGetCats property & should be a function', () => {
         const fakeDispatch = spy()
 
         const mappedDispatch = AllCatsMapDispatch(fakeDispatch)
-        expect(mappedDispatch.fetchCats).to.not.be.an('undefined')
-        expect(mappedDispatch.fetchCats).to.be.a('function')
+        expect(mappedDispatch.goGetCats).to.not.be.an('undefined')
+        expect(mappedDispatch.goGetCats).to.be.a('function')
       })
 
       it('should call the passed-in dispatch function when invoked', () => {
         const fakeDispatch = spy()
 
         const mappedDispatch = AllCatsMapDispatch(fakeDispatch)
-        mappedDispatch.fetchCats() // call the thing so we "load" the cats
+        mappedDispatch.goGetCats() // call the thing so we "load" the cats
         expect(fakeDispatch.calledOnce).to.equal(true)
 
       })
@@ -63,24 +63,25 @@ describe('React-Redux MapBlanks', () => {
         }
 
         const mappedState = SingleCatMapState(fakeState)
-        expect(mappedState.cat).to.equal.deep(fakeState.cat)
+        expect(mappedState).to.deep.equal(fakeState.cat)
 
       })
     })
+
     describe('mapDispatch', () => {
-      it('should have a fetchCat property & should be a function', () => {
+      it('should have a goGetCat property & should be a function', () => {
         const fakeDispatch = spy();
 
         const mappedDispatch = SingleCatMapDispatch(fakeDispatch)
-        expect(mappedDispatch.fetchCat).to.not.be.an('undefined')
-        expect(mappedDispatch.fetchCat).to.be.a('function')
+        expect(mappedDispatch.goGetCat).to.not.be.an('undefined')
+        expect(mappedDispatch.goGetCat).to.be.a('function')
       })
 
       it('should call the passed-in dispatch function when invoked', () => {
         const fakeDispatch = spy()
 
         const mappedDispatch = SingleCatMapDispatch(fakeDispatch)
-        mappedDispatch.fetchCat()
+        mappedDispatch.goGetCat()
         expect(fakeDispatch.calledOnce).to.equal(true)
       })
     })

@@ -19,8 +19,12 @@ xdescribe('React - SingleCat', () => {
     id: 9001,
     name: "Peter",
     imageUrl: 'peters image url',
-    favoriteToys: [
-      { name: 'laser', likeness: 5 }
+    toyRatings: [
+      {
+        name: 'laser',
+        toyLikeness:
+          { rating: 5 }
+      }
     ],
     friends: [
       { id: 9002, name: 'Lola', imageUrl: '' },
@@ -31,7 +35,9 @@ xdescribe('React - SingleCat', () => {
   }
 
   beforeEach(() => {
-    catWrapper = shallow(<DisconnectedSingleCat {...cat} />)
+    catWrapper = shallow(<DisconnectedSingleCat {...cat} />, {
+      disableLifecycleMethods: true,
+    })
   })
 
   it(`shows the cats name in an h2 somewhere`, () => {
@@ -53,14 +59,14 @@ xdescribe('React - SingleCat', () => {
 
     // now we look at children's length
     const toyListItems = toyList.find('li')
-    expect(toyListItems).to.have.lengthOf(cat.favoriteToys.length)
+    expect(toyListItems).to.have.lengthOf(cat.toyRatings.length)
 
   })
 
   describe('friends block', () => {
 
     it('should have a div with the class friends', () => {
-      const friendsWrapper = catWrapper.find('.friends').shallow()
+      const friendsWrapper = catWrapper.find('.friends')
       // this is checking to make sure that it exists
       expect(friendsWrapper.exists()).to.equal(true)
     })
