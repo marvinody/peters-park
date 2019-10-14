@@ -10,13 +10,16 @@ import CatCard from './CatCard'
 // this is not the correct import you want generally
 // you want the default export
 // don't worry about it too much
-export const DisconnectedAllCats = props => {
-  return (
-    <span>
-      YOUR STUFF HERE
-      YOU SHOULD USE CATCARD AND PASS STUFF DOWN MAYBE
-    </span >
-  )
+export class DisconnectedAllCats extends React.Component {
+
+  render() {
+    return (
+      <div>
+        YOUR STUFF HERE
+        YOU SHOULD USE CATCARD AND PASS STUFF DOWN MAYBE
+      </div>
+    )
+  }
 }
 
 // the mapBlankToProps don't have to be filled out with anything
