@@ -1,7 +1,13 @@
 # Peter's Park
 
-## EXPLANATION
-TODO
+## What's up with this?
+Help Peter set up his park!
+
+Some practice with React, Redux, and React-Redux
+
+THIS MAY NOT BE ENTIRELY PERFECT AND THERE MAY BE SOME HIDDEN OR STRAY BUGS SO PLEASE BE AWARE!
+
+Make sure you read the comments everywhere (there are comments in the server files too if you need a refresher on that).
 
 ### Set up
 
@@ -16,16 +22,21 @@ TODO
 You can also view the app itself!
 
 - `npm run dev`
-- In your browser, navigate to http://localhost:8080/
-- The stuff should hot-reload (meaning you don't need to refresh GENERALLY)
+- In your browser, navigate to http://localhost:3000/
+
+You need to have written the store and components in order to view it though.
+
+It's already connected together so everything needs to be written partially in order to not crash! Use to test specs to get up and running first.
 
 ### What am I doing?
 Mess around in these files
-- TODO
+- `src/client/components/AllCats.js`
+- `src/client/components/CatCard.js`
+- `src/client/components/SingleCat.js`
+- `src/client/store/cat.js`
+- `src/client/store/cats.js`
 
-For the components, Peter has initialized them as functional (dumb) components
-
-However, if you think the component needs state (maybe the test spec tells you), then feel free to upgrade it to a class component. Just keep the structure of the exports roughly similar
+All the tests are located in the `tests/` folder in the appropriate subfolder
 
 If you touch anything else, Peter will scratch you
 
