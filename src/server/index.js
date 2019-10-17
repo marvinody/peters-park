@@ -52,6 +52,6 @@ app.use((err, req, res, next) => {
 
 // Finally, let's actually listen to requests
 app.listen(3000, () => {
-  console.log("Hello Seattle. I'm listening")
+  console.log("Hello Seattle. I'm listening on port 3000")
   db.sync({ force: false })
 })
